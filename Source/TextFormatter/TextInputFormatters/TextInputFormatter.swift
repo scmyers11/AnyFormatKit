@@ -52,9 +52,6 @@ open class TextInputFormatter: TextFormatter, TextInputFormatterProtocol {
   */
   open func shouldChangeTextIn(
     textInput: TextInput, range: NSRange, replacementString text: String) -> Bool {
-    if range.location == 0 && text == " " {
-        return true //necessary to handle keyboard autocomplete suggestions
-    }
     if let formattedPrefix = formattedText(from: prefix),
       !formattedPrefix.isEmpty,
       range.location < formattedPrefix.count {
@@ -86,7 +83,7 @@ private extension TextInputFormatter {
   func correctedContent(currentContent: String?, range: NSRange, replacementFiltered: String) -> String? {
     let oldText = currentContent ?? String()
     
-    let newRange = replacementFiltered.count > 0 ? NSRange.init(location: range.location, length: replacementFiltered.count) : range
+    let newRange = NSRange.init(location: range.location, length: replacementFiltered.count)
     
     let correctedRange = unformattedRange(from: newRange)
     let oldUnformatted = unformattedText(from: oldText) as NSString?
