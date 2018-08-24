@@ -46,6 +46,7 @@ extension TextInputField: UITextFieldDelegate {
   open func textField(_ textField: UITextField,
                  shouldChangeCharactersIn range: NSRange,
                  replacementString string: String) -> Bool {
+    print(string)
     guard range.location != 0 && string != " " else { return true } // attempt to handle keyboard suggestions
     guard let textInput = textField as? TextInputField else { return true }
     var shouldChange = true
