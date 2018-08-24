@@ -86,7 +86,9 @@ private extension TextInputFormatter {
   func correctedContent(currentContent: String?, range: NSRange, replacementFiltered: String) -> String? {
     let oldText = currentContent ?? String()
     
-    let correctedRange = unformattedRange(from: range)
+    let newRange = replacementFiltered.count > 0 ? NSRange.init(location: range.location, length: replacementFiltered.count) : range
+    
+    let correctedRange = unformattedRange(from: newRange)
     let oldUnformatted = unformattedText(from: oldText) as NSString?
     
     let newText = oldUnformatted?.replacingCharacters(in: correctedRange, with: replacementFiltered)
