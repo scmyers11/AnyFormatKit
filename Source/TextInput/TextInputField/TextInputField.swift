@@ -37,12 +37,6 @@ open class TextInputField: AttributedTextInputField, TextInput {
     set {}
     get { return nil }
   }
-  
-  @available(*, unavailable, message: "use textInputDelegates and textInputFieldDelegates instead")
-  open override var delegate: UITextFieldDelegate? {
-    set {}
-    get { return nil }
-  }
 
   // MARK: - Init
   public override init(frame: CGRect) {
