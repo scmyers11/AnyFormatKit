@@ -8,7 +8,9 @@
 [![Platform](https://img.shields.io/cocoapods/p/AnyFormatKit.svg?style=flat)](http://cocoapods.org/pods/AnyFormatKit)
 ![Swift](https://img.shields.io/badge/%20in-swift%204.0-orange.svg)
 
-Text formatting framework written on Swift 4.0.
+Text formatting framework written on Swift 4.0. This is a cannibalized
+version to support a specific internal project. Please refer to the
+[true version](https://github.com/luximetr/AnyFormatKit)
 
 ## Features
 
